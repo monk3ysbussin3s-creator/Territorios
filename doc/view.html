@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizador de Documento</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div id="visor-container" class="public-container">
+        <h2>Cargando documento...</h2>
+        <p>Si la carga tarda, verifique que los parámetros sean correctos.</p>
+    </div>
+
+    <script>
+        // === CRUCIAL: REEMPLAZA ESTA URL CON LA URL DE TU APPS SCRIPT (/exec) ===
+        const URL_APPSCRIPT = "https://script.google.com/macros/s/AKfycbzq-oj4mFGwDoLQB2rvE_jy8M3PzsnWP2BHA5wwRahKKzlBBvMoWtbdDcmAXGQyatpR/exec"; 
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Obtener el número de fila de la URL (Ej: ?fila=7)
+            const urlParams = new URLSearchParams(window.location.search);
+            const fila = urlParams.get('fila');
+
+            if (fila) {
+                // 2. Construir la URL del visor de Apps Script
+                const visorUrl = `${URL_APPSCRIPT}?fila=${fila}`;
+                
+                // 3. Crear el iframe que carga directamente la Web App de Apps Script
+                // NOTA: Tu función handleViewAction genera un HTML completo con el PDF embebido.
+                const iframe = document.createElement('iframe');
+                iframe.src = visorUrl;
+                iframe.style.width = '100%';
+                iframe.style.height = '100vh'; // Usar altura completa de la ventana
+                iframe.style.border = 'none';
+
+                // 4. Reemplazar el mensaje de carga con el iframe
+                const container = document.getElementById('visor-container');
+                container.innerHTML = '';
+                container.appendChild(iframe);
+
+            } else {
+                document.getElementById('visor-container').innerHTML = 
+                    '<h2>❌ Error: Fila no especificada.</h2>' +
+                    '<p>Por favor, use el enlace completo proporcionado por el generador.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
