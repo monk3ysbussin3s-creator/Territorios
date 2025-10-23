@@ -1,5 +1,0 @@
-/Territorios
-	/docs
-        	index.html
-       		view.html
-        	style.css
