@@ -1,0 +1,131 @@
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container, .public-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1d3557;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  background: #457b9d;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { background: #1d3557; }
+
+iframe {
+  width: 150%;
+  height: 70vh;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+
+.contador {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  color: #2a9d8f;
+}
+
+.expired {
+  font-size: 1.4rem;
+  color: #e63946;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* --- Estilos para la caja de resultados (después de generar el enlace) --- */
+
+/* Estilo principal para la caja de resultado */
+.resultado-box {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #a8dadc; /* Borde suave de color éxito */
+    background-color: #f1faee; /* Fondo muy claro para indicar éxito */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+    text-align: center; 
+}
+
+/* Estilo para el párrafo de confirmación */
+.resultado-box p {
+    color: #1d3557; /* Usar el color principal oscuro */
+    margin-bottom: 5px;
+}
+
+/* Estilo para el párrafo del enlace */
+.resultado-enlace {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #457b9d; /* Color secundario para resaltar */
+}
+
+/* Estilo para el enlace propiamente dicho */
+.resultado-box a {
+    display: block; 
+    word-break: break-all; /* Romper la URL si es muy larga */
+    font-size: 1.15em;
+    color: #e63946; /* Un color fuerte para que resalte la URL */
+    text-decoration: none; 
+    padding: 8px 0;
+    transition: color 0.3s;
+    font-weight: 700;
+}
+
+.resultado-box a:hover {
+    color: #1d3557;
+    text-decoration: underline;
+}
+
+/* Estilo para el botón de copiar (sobrescribiendo el estilo general del botón si es necesario) */
+.resultado-box button {
+    margin-top: 15px;
+    width: auto; /* Dejar que el botón sea más pequeño */
+    background-color: #2a9d8f; /* Un verde vibrante */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    transition: background-color 0.3s;
+}
+
+.resultado-box button:hover {
+    background-color: #264653;
+}
